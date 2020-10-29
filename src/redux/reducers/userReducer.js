@@ -4,6 +4,7 @@ import {
   CLEAR_ERRORS,
   LOADING_UI,
   SET_AUTHENTICATED,
+  SET_UNAUTHENTICATED,
 } from "../types";
 
 const initialState = {
@@ -23,8 +24,8 @@ export default function (state = initialState, action) {
       return {
         authenticated: true,
         ...action.payload,
-      }
-      default:
-          return state;
+      };
+    default:
+      return state;
   }
 }
