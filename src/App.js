@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import Navbar from "./components/Navbar";
 import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
 
 const theme = createMuiTheme({
+  
   palette: {
     primary: {
       light: "#33c9dc",
@@ -22,8 +24,34 @@ const theme = createMuiTheme({
       contrastText: "#fff",
     },
   },
-  typography: {
-    useNextVariants: true,
+  spreadIt: {
+    typography: {
+      useNextVariants: true,
+    },
+    form: {
+      textAlign: "center",
+    },
+    image: {
+      margin: "20px auto 10px auto",
+    },
+    pageTitle: {
+      margin: "10px auto 10px auto",
+    },
+    textField: {
+      margin: "10px auto 10px auto",
+    },
+    button: {
+      marginTop: 20,
+      position: "relative",
+    },
+    customError: {
+      color: "red",
+      fontSize: "0.8rem",
+      marginTop: 10,
+    },
+    progress: {
+      position: "absolute",
+    },
   },
 });
 
