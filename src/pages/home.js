@@ -27,7 +27,7 @@ class home extends Component {
       <p>Loading...</p>
     );
     return (
-      <Grid container spacing={8}>
+      <Grid container spacing={2}>
         <Grid item sm={8} xs={12}>
           {recentScreamsMarkup}
         </Grid>
