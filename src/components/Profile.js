@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { connect } from "react-redux";
+import { logoutuser, uploadImage } from "../redux/actions/userActions";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import Paper from "@material-ui/core/Paper";
@@ -66,8 +67,8 @@ const styles = {
 class Profile extends Component {
   handleImagechange = (event) => {
     const image = event.target.files[0];
-    const formData= new FormData();
-    FormData.append('image', image, image.name);
+    const formData = new FormData();
+    FormData.append("image", image, image.name);
     this.props.uploadImage(formData);
   };
   handleEditPicture = () => {
@@ -173,9 +174,16 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
+const mapActionsToProps = { logoutUser, uploadImage };
+
 Profile.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  uploadImage: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps)(withStyles(styles)(Profile));
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(withStyles(styles)(Profile));
