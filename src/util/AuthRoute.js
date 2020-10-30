@@ -12,7 +12,7 @@ const AuthRoute = ({ component: Component, authenticated, ...rest }) => (
   />
 );
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
   authenticated: state.user.authenticated,
 });
 
