@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { connect } from "react-redux";
-import { logoutuser, uploadImage } from "../redux/actions/userActions";
+import { logoutUser, uploadImage } from "../redux/actions/userActions";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import Paper from "@material-ui/core/Paper";
