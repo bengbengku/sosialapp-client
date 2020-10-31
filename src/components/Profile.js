@@ -65,10 +65,10 @@ const styles = {
 };
 
 class Profile extends Component {
-  handleImagechange = (event) => {
+  handleImageChange = (event) => {
     const image = event.target.files[0];
     const formData = new FormData();
-    FormData.append("image", image, image.name);
+    formData.append("image", image, image.name);
     this.props.uploadImage(formData);
   };
   handleEditPicture = () => {
@@ -95,7 +95,7 @@ class Profile extends Component {
                 type="file"
                 id="imageInput"
                 hidden="hidden"
-                onChange={this.handleImagechange}
+                onChange={this.handleImageChange}
               />
               <Tooltip title="Edit profile picture" placement="top">
                 <IconButton onClick={this.handleEditPicture} className="button">
