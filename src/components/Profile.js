@@ -9,6 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import EditDetails from './EditDetails';
 import MuiLink from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import LocationOn from "@material-ui/icons/LocationOn";
@@ -146,6 +147,7 @@ class Profile extends Component {
                   <KeyboardReturnIcon color="primary"/>
                 </IconButton>
             </Tooltip>
+            <EditDetails/>
           </div>
         </Paper>
       ) : (
