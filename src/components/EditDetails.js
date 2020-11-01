@@ -15,6 +15,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 const styles = (theme) => ({
   ...theme.spreadIt,
+  button : {
+    float: 'right'
+  }
 });
 
 class EditDetails extends Component {
