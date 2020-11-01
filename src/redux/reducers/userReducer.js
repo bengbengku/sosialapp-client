@@ -47,7 +47,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         likes: state.likes.filter(
-          (like) => like.screamId === action.payload.screamId
+          (like) => like.screamId !== action.payload.screamId
         ),
       };
     default:
