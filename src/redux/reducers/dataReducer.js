@@ -3,7 +3,6 @@ import {
   LIKE_SCREAM,
   UNLIKE_SCREAM,
   LOADING_DATA,
-  SET_SCREAM,
 } from "../types";
 
 const initialState = {
