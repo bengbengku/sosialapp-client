@@ -10,7 +10,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import ChatIcon from "@material-ui/icons/Chat";
-import DeleteScream from './DeleteScream';
+import DeleteScream from "./DeleteScream";
+import ScreamDialog from "./ScreamDialog";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { connect } from "react-redux";
@@ -20,7 +21,7 @@ const styles = {
   card: {
     display: "flex",
     marginBottom: 20,
-    position:'relative'
+    position: "relative",
   },
   image: {
     minWidth: 200,
@@ -112,6 +113,7 @@ class Scream extends Component {
             <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} comments</span>
+          <ScreamDialog screamId={screamId} userHandle={userHandle} />
         </CardContent>
       </Card>
     );
