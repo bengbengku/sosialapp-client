@@ -9,14 +9,14 @@ import dayjs from "dayjs";
 const styles = (theme) => ({
   ...theme.spreadIt,
   commentImage: {
-      maxWidth: '100%',
-      height: 100,
-      objectFit: 'cover',
-      borderRadius: '50%'
+    maxWidth: "100%",
+    height: 100,
+    objectFit: "cover",
+    borderRadius: "50%",
   },
   commentData: {
-      marginLeft: 20
-  }
+    marginLeft: 20,
+  },
 });
 
 export class Comments extends Component {
@@ -24,7 +24,7 @@ export class Comments extends Component {
     const { comments, classes } = this.props;
     return (
       <Grid container>
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           const { body, createdAt, userImage, userHandle } = comment;
           return (
             <Fragment key={createdAt}>
@@ -56,7 +56,9 @@ export class Comments extends Component {
                   </Grid>
                 </Grid>
               </Grid>
-              <hr className={classes.visibleSeperator} />
+              {index !== comments.length - 1 && (
+                <hr className={classes.visibleSeperator} />
+              )}
             </Fragment>
           );
         })}
