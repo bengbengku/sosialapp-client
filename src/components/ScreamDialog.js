@@ -24,26 +24,26 @@ const styles = (theme) => ({
   profileImage: {
     maxWidth: 200,
     height: 200,
-    borderRadius: '50%',
-    objectFit: 'cover'
+    borderRadius: "50%",
+    objectFit: "cover",
   },
   dialogContent: {
-    padding: 20
+    padding: 20,
   },
   closeButton: {
-    position: 'absolute',
-    left: '90%',
-    top: '5%'
+    position: "absolute",
+    left: "90%",
+    top: "5%",
   },
   expandButton: {
-    position: 'absolute',
-    left: '90%'
+    position: "absolute",
+    left: "90%",
   },
   spinnerDiv: {
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 50,
-    marginBottom: 50
-  }
+    marginBottom: 50,
+  },
 });
 
 class ScreamDialog extends Component {
@@ -74,7 +74,9 @@ class ScreamDialog extends Component {
     } = this.props;
 
     const dialogMarkup = loading ? (
-      <CircularProgress size={50} />
+      <div className={classes.spinnerDiv}>
+        <CircularProgress size={50} thickness={2} />
+      </div>
     ) : (
       <Grid container spacing={2}>
         <Grid item sm={5}>
