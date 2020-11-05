@@ -22,7 +22,7 @@ export class CommentForm extends Component {
       this.setState({ errors: nextProps.UI.errors });
     }
     if (!nextProps.UI.errors && !nextProps.UI.loading) {
-      this.setState({ body: "" });
+      this.setState({ body: "", errors: {} });
     }
   }
 
