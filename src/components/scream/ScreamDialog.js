@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import MyButton from "../../util/MyButton";
 import LikeButton from "./LikeButton";
+import Comments from "./Comments";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import Dialog from "@material-ui/core/Dialog";
@@ -18,10 +19,6 @@ import ChatIcon from "@material-ui/icons/Chat";
 
 const styles = (theme) => ({
   ...theme.spreadIt,
-  invisibleSeperator: {
-    border: "none",
-    margin: 4,
-  },
   profileImage: {
     maxWidth: 200,
     height: 200,
@@ -70,6 +67,7 @@ class ScreamDialog extends Component {
         commentCount,
         userImage,
         userHandle,
+        comments,
       },
       UI: { loading },
     } = this.props;
@@ -98,13 +96,15 @@ class ScreamDialog extends Component {
           </Typography>
           <hr className={classes.invisibleSeperator} />
           <Typography variant="body1">{body}</Typography>
-          <LikeButton screamId={screamId}/>
+          <LikeButton screamId={screamId} />
           <span>{likeCount} likes</span>
           <MyButton tip="comments">
             <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} comments</span>
         </Grid>
+        <hr className={classes.visibleSeperator} />
+        <Comments comments={comments} />
       </Grid>
     );
     return (
